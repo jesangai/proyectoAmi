@@ -14,7 +14,7 @@ var path=require('path')
 
 DB();
 
-const bodyParse=require('body-parse')
+const bodyParse=require('body-parser')
 const bodyParserURLEncoded = bodyParse.urlencoded({extended:true})
 
 app.use(bodyParse.json())
@@ -24,13 +24,13 @@ app.set('port', process.env.PORT || 3000);
 
 // Middlewares
 app.use('/',express.static('cliente',{redirect:false}));
-app.use(cors({origin: 'http://68.66.207.7:4200'}));
+app.use(cors({origin: 'http://68.66.207.7'}));
 
 app.use(function (req, res, next) {
 
   res.header("Access-Control-Allow-Origin", "*");
   res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
-  next();ls
+  next();
 });
 app.use(express.json());
 
