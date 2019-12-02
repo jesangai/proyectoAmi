@@ -13,6 +13,9 @@ app.use(express.json());
 
 // Routes
 app.use('/api/employees', require('./routes/employee.routes'));
+app.use('/api/users', require('./routes/user.routes'));
+app.use('/api/personas', require('./routes/persona.routes'));
+
 
 // starting the server
 app.listen(app.get('port'), () => {
