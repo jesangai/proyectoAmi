@@ -11,7 +11,11 @@
   "license": "ISC",
   "dependencies": {
     "bcryptjs": "^2.4.3",
+<<<<<<< HEAD
     "body-parser": "^1.19.0",
+=======
+    "body-parse": "^0.1.0",
+>>>>>>> bb1e126f78ba8d4030b770a44827972acf3c7cc7
     "cors": "^2.8.5",
     "express": "^4.16.4",
     "jsonwebtoken": "^8.5.1",
