@@ -17,6 +17,10 @@ app.use('/api/users', require('./routes/user.routes'));
 app.use('/api/personas', require('./routes/persona.routes'));
 
 
+app.get('*',function(req,res,next){
+    res.sendFile(path.resolve('cliente/index.html'))
+  });
+
 // starting the server
 app.listen(app.get('port'), () => {
     console.log(`server on port ${app.get('port')}`);

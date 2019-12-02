@@ -10,8 +10,8 @@ export class PersonaService {
 
   selectedPersona:Persona;
   personas:Persona[]
-  readonly URL_API = 'http://localhost:3000/api/personas';
-  constructor(private http:HttpClient) {
+  readonly URL_API = 'http://68.66.207.7:3000/api/personas';
+  constructor(public http:HttpClient) {
 this.selectedPersona=new Persona();
    }
 

@@ -10,9 +10,9 @@ export class EmployeeService {
   selectedEmployee: Employee;
   employees: Employee[];
   
-  readonly URL_API = 'http://localhost:3000/api/employees';
+  readonly URL_API = 'http://68.66.207.7:3000/api/employees';
 
-  constructor(private http: HttpClient) {
+  constructor(public http: HttpClient) {
     this.selectedEmployee = new Employee();
   }
 

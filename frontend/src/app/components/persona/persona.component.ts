@@ -13,7 +13,7 @@ declare var M: any;
 })
 export class PersonaComponent implements OnInit {
 
-  constructor(private personaService: PersonaService) { }
+  constructor(public personaService: PersonaService) { }
 
   ngOnInit() {
     this.getPersonas();
