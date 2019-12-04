@@ -9,7 +9,7 @@ export class User {
     }
 
     _id: string;
-    idpersona: string;
+    idpersona:string;
     rol: string;
     user: string;
     password: String;
