@@ -12,5 +12,5 @@ export class User {
     idpersona:string;
     rol: string;
     user: string;
-    password: String;
+    password: string;
 }

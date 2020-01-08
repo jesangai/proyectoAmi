@@ -1,11 +1,37 @@
-<nav>
-    <div class="nav-wrapper  purple darken-4">
-      <div class="container">
-        <a href="#" class="brand-logo center">Mean Crud</a>
-      </div>
-    </div>
-</nav>
+    <link rel="stylesheet" type="text/css" href="../assets/fonts/font-awesome/css/font-awesome.css">
 
-<!-- <app-employee></app-employee>   -->
+    <!-- Stylesheet
+    ================================================== -->
+    <link rel="stylesheet" type="text/css"  href="../assets/css/style.css">
+    <link rel="stylesheet" type="text/css" href="../assets/css/responsive.css">
 
-<router-outlet></router-outlet>
+    <!-- Google Fonts
+    ================================================== -->
+    <link href='http://fonts.googleapis.com/css?family=Lato:100,300,400,700,900,100italic,300italic,400italic,700italic,900italic' rel='stylesheet' type='text/css'>
+
+
+
+<div >
+    <nav >
+        <div class="nav-wrapper  white">
+          <div class="container" >
+            <a class="navbar-brand" href="#"><img src="../assets/img/logo.jpg" alt="..."></a>
+            <div class="container">
+                &nbsp;&nbsp;
+              <a *ngIf="userLogueado==undefined" style="color: black"  routerLink="/admin/login" class="nav-link">Iniciar Sesión</a>
+              <a *ngIf="userLogueado!=undefined" (click)="cerrarsesion()" class="nav-link">Cerrar Sesión</a>
+              <p *ngIf="userLogueado!=undefined">Bienvenida, {{userLogueado.nombre}}</p>
+              &nbsp;&nbsp;
+              <a  [routerLink]="['/admin/admincrud']" style="color: black">  Ir a menu administrador</a>
+            </div>  
+          </div>
+        </div>
+
+
+    </nav>
+    <br>
+    <br>
+      
+  <router-outlet></router-outlet>
+
+    
