@@ -1,4 +1,5 @@
-import{Component} from '@angular/core';
+import { Component } from '@angular/core';
+import { User } from "./models/user";
 
 @Component({
   selector: 'app-root',
@@ -7,4 +8,14 @@ import{Component} from '@angular/core';
 })
 export class AppComponent {
   title = 'app';
+
+  public userLogueado:User;
+  ngOnInit(){
+    this.userLogueado=JSON.parse(localStorage.getItem("currentUser"));
+  }
+
+  cerrarsesion(){
+    localStorage.removeItem("currentUser");
+    location.reload();
+  }
 }
