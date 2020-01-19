@@ -12,7 +12,8 @@ articuloCtrl.createArticulo = async (req, res, next) => {
         name: req.body.name,
         detalle: req.body.detalle,
         resumen: req.body.resumen,
-        exp_articulo: req.body.exp_articulo
+        exp_articulo: req.body.exp_articulo,
+        idley: req.body.idley
         
     });
     await articulo.save();
@@ -31,7 +32,8 @@ articuloCtrl.editArticulo = async (req, res, next) => {
         name: req.body.name,
         detalle: req.body.detalle,
         resumen: req.body.resumen,
-        exp_articulo: req.body.exp_articulo
+        exp_articulo: req.body.exp_articulo,
+        idley: req.body.idley
     };
     await Articulo.findByIdAndUpdate(id, {$set: articulo}, {new: true});
     res.json({status: 'Articulo Actualizada'});
@@ -41,5 +43,11 @@ articuloCtrl.deleteArticulo = async (req, res, next) => {
     await Articulo.findByIdAndRemove(req.params.id);
     res.json({status: 'Articulo Eliminada'});
 };
+
+articuloCtrl.getArticuloley = async (req, res) => {
+    const { id } = req.params;
+    const articulo = await Articulo.find({ 'ley': id});
+    res.json(articulo);
+}
 
 module.exports = articuloCtrl;

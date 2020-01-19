@@ -9,7 +9,6 @@ leyCtrl.getLeyes = async (req, res, next) => {
 
 leyCtrl.createLey = async (req, res, next) => {
     const ley = new Ley({
-        idarticulo: req.body.idarticulo,
         estado: req.body.estado,
         nombre: req.body.nombre,
         cod_decreto: req.body.cod_decreto,
@@ -30,7 +29,6 @@ leyCtrl.getLey = async (req, res, next) => {
 leyCtrl.editLey = async (req, res, next) => {
     const { id } = req.params;
     const ley = {
-        idarticulo: req.body.idarticulo,
         estado: req.body.estado,
         nombre: req.body.nombre,
         cod_decreto: req.body.cod_decreto,
@@ -46,5 +44,7 @@ leyCtrl.deleteLey = async (req, res, next) => {
     await Ley.findByIdAndRemove(req.params.id);
     res.json({status: 'Ley Eliminada'});
 };
+
+
 
 module.exports = leyCtrl;

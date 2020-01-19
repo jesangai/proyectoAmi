@@ -8,5 +8,7 @@ router.post('/', articulo.createArticulo);
 router.get('/:id', articulo.getArticulo);
 router.put('/:id', articulo.editArticulo);
 router.delete('/:id', articulo.deleteArticulo);
+router.get('/buscar/:id', articulo.getArticuloley);
+
 
 module.exports = router;

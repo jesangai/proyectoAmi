@@ -7,6 +7,8 @@ const articuloSchema = new Schema({
     detalle: { type: String, required: false},
     resumen: { type: String, required: false},
     exp_articulo: { type: String, required: false},
+    idley: { type: String, required: false}
+
     
 });
 

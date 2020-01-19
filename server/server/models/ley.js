@@ -2,7 +2,6 @@ const mongoose = require('mongoose');
 const { Schema } = mongoose;
 
 const leySchema = new Schema({
-    idarticulo: { type: String, required: false},
     estado: { type: String, required: false},
     nombre: { type: String, required: false},
     cod_decreto: { type: String, required: false},
