@@ -34,7 +34,10 @@
                 [(ngModel)]="articuloService.selectedArticulo.exp_articulo" placeholder="descripcion_del_articulo">
               </div>
 
-	
+              <div class="input-field col-s12">
+                <input type="text" name="idley" #name="ngModel" 
+                [(ngModel)]="articuloService.selectedArticulo.idley" placeholder="idley">
+            </div>
               <div class="card-action">
                 <div class="input-field col-s12">
                   <button class="btn right  purple darken-4" (click)="resetForm(articuloForm)">Limpiar</button>
@@ -53,6 +56,7 @@
           <th>detalle</th>
           <th>resumen</th>
           <th>descripcion_del_articulo</th>
+          <th>idley</th>
 
         
         </thead>
@@ -62,6 +66,7 @@
             <td>{{ articulo.detalle }}</td>
             <td>{{ articulo.resumen }}</td>
             <td>{{ articulo.exp_articulo }}</td>
+            <td>{{ articulo.idley }}</td>
 
             <td>
               <a (click)="editArticulo(articulo)">

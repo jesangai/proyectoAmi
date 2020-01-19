@@ -12,13 +12,14 @@
                   <input type="hidden" name="_id" #_id="ngModel" 
                   [(ngModel)]="leyService.selectedLey._id">
                   <div class="row">
-                    <div class="input-field col-s12">
-                        <input type="text" name="idarticulo" #name="ngModel" 
-                        [(ngModel)]="leyService.selectedLey.idarticulo" placeholder="idarticulo">
-                    </div>
+                    
                     <div class="input-field col-s12">
                       <input type="text" name="estado" #name="ngModel" 
                       [(ngModel)]="leyService.selectedLey.estado" placeholder="Estado">
+                    </div>
+                    <div class="input-field col-s12">
+                      <input type="text" name="periodo" #name="ngModel" 
+                      [(ngModel)]="leyService.selectedLey.periodo" placeholder="Periodo">
                     </div>
                     <div class="input-field col-s12">
                       <input type="text" name="nombre" #name="ngModel" 
@@ -54,8 +55,8 @@
           <div class="col s7">
             <table class="striped highlight black-text">
               <thead>
-                <th>idarticulo</th>
                 <th>estado</th>
+                <th>periodo</th>
                 <th>nombre</th>
                 <th>codigo decreto</th>
                 <th>fecha publicacion</th>
@@ -65,8 +66,8 @@
               </thead>
               <tbody>
                 <tr *ngFor="let ley of leyService.leyes">
-                    <td>{{ ley.idarticulo }}</td>
                   <td>{{ ley.estado }}</td>
+                  <td>{{ ley.periodo }}</td>                  
                   <td>{{ ley.nombre }}</td>
                   <td>{{ ley.cod_decreto }}</td>
                   <td>{{ ley.fecha_publicacion }}</td>
