@@ -10,6 +10,7 @@ leyCtrl.getLeyes = async (req, res, next) => {
 leyCtrl.createLey = async (req, res, next) => {
     const ley = new Ley({
         estado: req.body.estado,
+        periodo: req.body.periodo,
         nombre: req.body.nombre,
         cod_decreto: req.body.cod_decreto,
         fecha_publicacion: req.body.fecha_publicacion,
@@ -30,6 +31,7 @@ leyCtrl.editLey = async (req, res, next) => {
     const { id } = req.params;
     const ley = {
         estado: req.body.estado,
+        periodo: req.body.periodo,
         nombre: req.body.nombre,
         cod_decreto: req.body.cod_decreto,
         fecha_publicacion: req.body.fecha_publicacion,
