@@ -9,6 +9,10 @@ leyCtrl.getLeyes = async (req, res, next) => {
 
 leyCtrl.createLey = async (req, res, next) => {
     const ley = new Ley({
+<<<<<<< HEAD
+        idarticulo: req.body.idarticulo,
+=======
+>>>>>>> 455129988dfadd76e4e14dc4c283ff146448c87e
         estado: req.body.estado,
         periodo: req.body.periodo,
         nombre: req.body.nombre,
@@ -30,6 +34,10 @@ leyCtrl.getLey = async (req, res, next) => {
 leyCtrl.editLey = async (req, res, next) => {
     const { id } = req.params;
     const ley = {
+<<<<<<< HEAD
+        idarticulo: req.body.idarticulo,
+=======
+>>>>>>> 455129988dfadd76e4e14dc4c283ff146448c87e
         estado: req.body.estado,
         periodo: req.body.periodo,
         nombre: req.body.nombre,
@@ -47,6 +55,9 @@ leyCtrl.deleteLey = async (req, res, next) => {
     res.json({status: 'Ley Eliminada'});
 };
 
+<<<<<<< HEAD
+=======
 
 
+>>>>>>> 455129988dfadd76e4e14dc4c283ff146448c87e
 module.exports = leyCtrl;
