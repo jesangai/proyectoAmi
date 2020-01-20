@@ -1,4 +1,5 @@
 const Ley = require('../models/ley');
+const Articulo = require('../models/articulo');
 
 const leyCtrl = {};
 
@@ -47,5 +48,29 @@ leyCtrl.deleteLey = async (req, res, next) => {
     await Ley.findByIdAndRemove(req.params.id);
     res.json({status: 'Ley Eliminada'});
 };
+
+leyCtrl.getLeyEstado = async (req, res, next) => {
+    const { id } = req.params;
+    const estado = await Ley.find({ 'estado': id}).select({estado: 1});
+
+    const datafinal = [await estado];
+    res.json(datafinal);
+}
+
+leyCtrl.getLeyArticulo = async (req, res, next) => {
+    const { id } = req.params;
+    const articulo = await Articulo.find({ 'name': id}).select({name: 1});;
+    const dataart = [await articulo];
+    res.json(dataart);
+}
+
+leyCtrl.getLeyPeriodo = async (req, res, next) => {
+    const { id } = req.params;
+    const periodo = await Ley.find({ 'periodo': id}).select({periodo: 1});
+
+    const dataper = [await periodo];
+    res.json(dataper);
+}
+
 
 module.exports = leyCtrl;
