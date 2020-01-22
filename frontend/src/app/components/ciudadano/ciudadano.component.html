@@ -28,14 +28,7 @@
                 <input type="text" name="contrasena" #name="ngModel" 
                 [(ngModel)]="ciudadanoService.selectedCiudadano.contrasena" placeholder="contrasena">
               </div>
-		<div class="input-field col-s12">
-                <input type="text" name="cuentatwitter" #name="ngModel" 
-                [(ngModel)]="ciudadanoService.selectedCiudadano.cuentatwitter" placeholder="cuentaTwitter">
-              </div>
-		<div class="input-field col-s12">
-                <input type="text" name="cuentafacebook" #name="ngModel" 
-                [(ngModel)]="ciudadanoService.selectedCiudadano.cuentafacebook" placeholder="cuentafacebbok">
-              </div>
+	
               <div class="card-action">
                 <div class="input-field col-s12">
                   <button class="btn right  purple darken-4" (click)="resetForm(ciudadanoForm)">Limpiar</button>
@@ -54,8 +47,7 @@
           <th>apellido</th>
           <th>cedula</th>
           <th>contrasena</th>
-          <th>cuentatwitter</th>
-          <th>cuentafacebook</th>
+      
         </thead>
         <tbody>
           <tr *ngFor="let ciudadano of ciudadanoService.ciudadanos">
@@ -63,8 +55,6 @@
             <td>{{ ciudadano.apellido }}</td>
             <td>{{ ciudadano.cedula }}</td>
             <td>{{ ciudadano.contrasena }}</td>
-            <td>{{ ciudadano.cuentatwitter }}</td>
-            <td>{{ ciudadano.cuentafacebook }}</td>
             <td>
               <a (click)="editCiudadano(ciudadano)">
                 <i class="material-icons">edit</i>

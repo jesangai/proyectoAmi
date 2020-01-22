@@ -1,13 +1,11 @@
 export class Ciudadano {
 
-    constructor(_id = '', nombre = '', apellido = '', cedula = '', contrasena = '', cuentatwitter = '', cuentafacebook = '') {
+    constructor(_id = '', nombre = '', apellido = '', cedula = '', contrasena = '') {
         this._id = _id;
         this.nombre = nombre;
         this.apellido = apellido;
         this.cedula = cedula;
         this.contrasena = contrasena;
- 	this.cuentatwitter = cuentatwitter;
-	this.cuentafacebook = cuentafacebook;
     }
 
     _id: string;
@@ -15,6 +13,5 @@ export class Ciudadano {
     apellido: string;
     cedula: string;
     contrasena: string;
-    cuentatwitter: string;
-    cuentafacebook: string;
+  
 }
