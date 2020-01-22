@@ -12,9 +12,7 @@ ciudadanoCtrl.createCiudadano = async (req, res, next) => {
         nombre: req.body.nombre,
         apellido: req.body.apellido,
         cedula: req.body.cedula,
-        contrasena: req.body.contrasena,
-        cuentatwitter: req.body.cuentatwitter,
-        cuentafacebook: req.body.cuentafacebook
+        contrasena: req.body.contrasena
     });
     await ciudadano.save();
     res.json({status: 'Ciudadano creada'});
@@ -32,9 +30,7 @@ ciudadanoCtrl.editCiudadano = async (req, res, next) => {
         nombre: req.body.nombre,
         apellido: req.body.apellido,
         cedula: req.body.cedula,
-        contrasena: req.body.contrasena,
-        cuentatwitter: req.body.cuentatwitter,
-        cuentafacebook: req.body.cuentafacebook
+        contrasena: req.body.contrasena
     };
     await Ciudadano.findByIdAndUpdate(id, {$set: ciudadano}, {new: true});
     res.json({status: 'Ciudadano Actualizada'});
@@ -47,7 +43,7 @@ ciudadanoCtrl.deleteCiudadano = async (req, res, next) => {
 
 ciudadanoCtrl.getCiudadanoApp = async (req, res, next) => {
     const { id } = req.params;
-    const data = await Ciudadano.find({ 'nombre': id}).select({cedula: 1, contrasena: 1});
+    const data = await Ciudadano.find({ 'cedula': id}).select({cedula: 1, contrasena: 1});
 
     const dataapp = [await data];
     res.json(dataapp);
