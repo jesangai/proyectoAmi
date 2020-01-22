@@ -45,4 +45,12 @@ ciudadanoCtrl.deleteCiudadano = async (req, res, next) => {
     res.json({status: 'Ciudadano Eliminada'});
 };
 
+ciudadanoCtrl.getCiudadanoApp = async (req, res, next) => {
+    const { id } = req.params;
+    const data = await Ciudadano.find({ 'nombre': id}).select({cedula: 1, contrasena: 1});
+
+    const dataapp = [await data];
+    res.json(dataapp);
+};
+
 module.exports = ciudadanoCtrl;

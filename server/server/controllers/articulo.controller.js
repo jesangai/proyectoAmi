@@ -1,5 +1,5 @@
 const Articulo = require('../models/articulo');
-
+const Ley = require('../models/ley');
 const articuloCtrl = {};
 
 articuloCtrl.getArticulos = async (req, res, next) => {
@@ -46,10 +46,14 @@ articuloCtrl.deleteArticulo = async (req, res, next) => {
 };
 
 
-articuloCtrl.getArticuloley = async (req, res) => {
+articuloCtrl.getArticuloley = async (req, res, next) => {
     const { id } = req.params;
-    const articulo = await Articulo.find({ 'ley': id});
-    res.json(articulo);
+    const ley = await Ley.find({ 'nombre': id});
+    const articulo = await Articulo.findById(ley.idley);
+
+    const data = [await ley, await articulo]; 
+
+    res.json(data);
 }
 
 module.exports = articuloCtrl;
