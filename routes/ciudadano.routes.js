@@ -8,5 +8,7 @@ router.post('/', ciudadano.createCiudadano);
 router.get('/:id', ciudadano.getCiudadano);
 router.put('/:id', ciudadano.editCiudadano);
 router.delete('/:id', ciudadano.deleteCiudadano);
+router.get('/buscar/:id', ciudadano.getCiudadanoApp);
+
 
 module.exports = router;
