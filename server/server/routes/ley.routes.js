@@ -9,6 +9,7 @@ router.get('/:id', ley.getLey);
 router.get('/articulo/:id', ley.getLeyArticulo);
 router.get('/estado/:id', ley.getLeyEstado);
 router.get('/periodo/:id', ley.getLeyPeriodo);
+router.get('/nombre/:id', ley.getLeyNombre);
 router.put('/:id', ley.editLey);
 router.delete('/:id', ley.deleteLey);
 

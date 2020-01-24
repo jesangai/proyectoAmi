@@ -48,7 +48,7 @@ app.use('/api/votos', require('./routes/votos.routes'));
 app.use('/api/articulos', require('./routes/articulo.routes'));
 app.use('/api/comentarios', require('./routes/comentario.routes'));
 app.use('/api/publicacionley', require('./routes/publicacionLey.routes'));
-
+app.use('/api/periodo', require('./routes/periodo.routes'));
 
 
 
