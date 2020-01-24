@@ -21,6 +21,7 @@ import { VotosComponent } from './components/votos/votos.component';
 import { PublicacionleyComponent } from './components/publicacionLey/publicacionley.component';
 import { ComentarioComponent } from './components/comentario/comentario.component';
 import { ArticuloComponent } from './components/articulo/articulo.component';
+import { PeriodoComponent } from './components/periodo/periodo.component';
 
 
 
@@ -33,7 +34,8 @@ import { ArticuloComponent } from './components/articulo/articulo.component';
     LeyComponent, 
     HistorialComponent, 
     CiudadanoComponent,
-    LoginComponent, AdminCrudComponent, RolComponent, InteraccionComponent, VotosComponent, PublicacionleyComponent, ComentarioComponent, ArticuloComponent
+    PeriodoComponent,
+    LoginComponent, AdminCrudComponent, RolComponent, InteraccionComponent, VotosComponent, PublicacionleyComponent, ComentarioComponent, ArticuloComponent, PeriodoComponent
 
   ],
   imports: [
@@ -72,6 +74,10 @@ import { ArticuloComponent } from './components/articulo/articulo.component';
       {
         path: 'admin/interaccion',
         component:InteraccionComponent
+      },
+      {
+        path: 'admin/periodo',
+        component:PeriodoComponent
       },
       {
         path: 'admin/login',

@@ -15,7 +15,7 @@ import { ArticuloComponent } from './components/articulo/articulo.component';
 import { VotosComponent } from './components/votos/votos.component';
 import { InteraccionComponent } from './components/interaccion/interaccion.component';
 import { PublicacionleyComponent } from './components/publicacionLey/publicacionley.component';
-
+import { PeriodoComponent } from './components/periodo/periodo.component';
 
 
 
@@ -34,6 +34,7 @@ const routes: Routes = [
   {path:'admin/publicacionley', component:PublicacionleyComponent},
   {path:'admin/comentarios', component:ComentarioComponent},
   {path:'admin/articulo', component:ArticuloComponent},
+  {path:'admin/periodo', component:PeriodoComponent},
 
 
 ];
