@@ -52,7 +52,7 @@ leyCtrl.deleteLey = async (req, res, next) => {
 
 leyCtrl.getLeyEstado = async (req, res, next) => {
     const { id } = req.params;
-    const estado = await Ley.find({ 'estado': id});
+    const estado = await Ley.find({ 'estado': id}).select();
 
     const datafinal = [await estado];
     res.json(datafinal);
@@ -60,8 +60,7 @@ leyCtrl.getLeyEstado = async (req, res, next) => {
 
 leyCtrl.getLeyNombre = async (req, res, next) => {
     const { id } = req.params;
-    const nombre = await Ley.find({ 'nombre': id});
-
+    const nombre = await Ley.find({ 'nombre': id}).select();
     const dataname = [await nombre];
     res.json(dataname);
 }
@@ -73,17 +72,13 @@ leyCtrl.getLeyArticulo = async (req, res, next) => {
     res.json(dataart);
 }
 
-
 leyCtrl.getLeyPeriodo = async (req, res, next) => {
     const { id } = req.params;
     const periodo = await Periodo.find({ 'periodo': id});
-    const ley = await Ley.findById(ley.idley);
+    const ley = await Ley.findById(periodo.idperiodo);
     const dataper = [await periodo, await ley];
     res.json(dataper);
 }
-
-
-
 
 
 module.exports = leyCtrl;

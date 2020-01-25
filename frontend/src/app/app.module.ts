@@ -23,7 +23,20 @@ import { ComentarioComponent } from './components/comentario/comentario.componen
 import { ArticuloComponent } from './components/articulo/articulo.component';
 import { PeriodoComponent } from './components/periodo/periodo.component';
 
-
+//Pag Inicio
+import { InicioComponent } from './components/inicio/inicio.component';
+import { ModificarLeyComponent } from './components/modificarLey/modificarLey.component';
+import { CrearLeyComponent } from './components/crearLey/crearLey.component';
+import { ModificarLeyAComponent } from './components/modificarLeyA/modificarLeyA.component';
+import { ArchivarComponent } from './components/archivar/archivar.component';
+import { ContactanosComponent } from './components/contactanos/contactanos.component';
+import { AcercaDeComponent } from './components/acercaDe/acercaDe.component';
+import { VotarComponent } from './components/votar/votar.component';
+import { LeyesComponent } from './components/leyes/leyes.component';
+import { HistorialAsambleistaComponent } from './components/historial-asambleista/historial-asambleista.component';
+import { LeerLeyComponent } from './components/leer-ley/leer-ley.component';
+import { LeyItemComponent } from './components/ley-item/ley-item.component';
+//Pag Fin
 
 @NgModule({
   declarations: [
@@ -35,7 +48,29 @@ import { PeriodoComponent } from './components/periodo/periodo.component';
     HistorialComponent, 
     CiudadanoComponent,
     PeriodoComponent,
-    LoginComponent, AdminCrudComponent, RolComponent, InteraccionComponent, VotosComponent, PublicacionleyComponent, ComentarioComponent, ArticuloComponent, PeriodoComponent
+    LoginComponent, 
+    AdminCrudComponent, 
+    RolComponent, 
+    InteraccionComponent, 
+    VotosComponent, 
+    PublicacionleyComponent, 
+    ComentarioComponent, 
+    ArticuloComponent, 
+    PeriodoComponent,
+
+    InicioComponent,
+    ModificarLeyComponent,
+    CrearLeyComponent,
+    ModificarLeyAComponent,
+    ArchivarComponent,
+    ContactanosComponent,
+    AcercaDeComponent,
+    VotarComponent,
+    LeyesComponent,
+    HistorialAsambleistaComponent,
+    LeyItemComponent,
+    LeerLeyComponent
+
 
   ],
   imports: [
@@ -103,6 +138,55 @@ import { PeriodoComponent } from './components/periodo/periodo.component';
         path: 'admin/articulo',
         component:ArticuloComponent
       }, 
+      {
+        path: 'admin/crearLey',
+        component:CrearLeyComponent
+      },  
+      {
+        path: 'admin/modificarLey',
+        component:ModificarLeyComponent
+      },  
+      {
+        path: 'admin/modificarLeyA',
+        component:ModificarLeyAComponent
+      },  
+      {
+        path: 'admin/archivar',
+        component:ArchivarComponent
+      },   
+      {
+        path: 'contactanos',
+        component:ContactanosComponent
+      },
+      {
+        path: 'admin/acercaDe',
+        component:AcercaDeComponent
+      },             
+      {
+        path: 'admin/votar',
+        component:VotarComponent
+      },  
+      {
+        path: 'admin/leyes',
+        component:LeyesComponent
+      },
+      {
+        path: 'admin/historial-asambleista',
+        component:HistorialAsambleistaComponent
+      },  
+      {
+        path: 'admin/inicio',
+        component:InicioComponent
+      },  
+
+      {
+        path: 'admin/leerLey/:id',
+        component:LeerLeyComponent 
+      },
+      {
+        path: 'admin/leyItem',
+        component:LeyItemComponent
+      }
 
     ])    
   ],

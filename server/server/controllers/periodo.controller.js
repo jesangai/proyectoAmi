@@ -4,8 +4,7 @@ const periodoCtrl = {};
 
 periodoCtrl.getPeriodos = async (req, res, next) => {
     const periodos = await  Periodo.find();
-    res.json(periodos
-        );
+    res.json(periodos);
 };
 
 periodoCtrl.createPeriodo = async (req, res, next) => {

@@ -1,3 +1,21 @@
+
+<!-- MATERIALIZE CSS CDN -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-beta/css/materialize.min.css"> 
+<!-- MATERIAL ICONS CDN -->
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet"> 
+
+<link rel="stylesheet" type="text/css" href="../../../assets/fonts/font-awesome/css/font-awesome.css">
+
+<!-- Stylesheet
+================================================== -->
+<link rel="stylesheet" type="text/css"  href="../../../assets/css/style.css">
+<link rel="stylesheet" type="text/css" href="../../../assets/css/responsive.css">
+
+<!-- Google Fonts
+================================================== -->
+<link href='http://fonts.googleapis.com/css?family=Lato:100,300,400,700,900,100italic,300italic,400italic,700italic,900italic' rel='stylesheet' type='text/css'>
+
+
 <div class="container">
         <br>
         <br>
@@ -56,7 +74,7 @@
             <table class="striped highlight black-text">
               <thead>
                 <th>estado</th>
-                <th>periodo</th>
+                <th>idperiodo</th>
                 <th>nombre</th>
                 <th>codigo decreto</th>
                 <th>fecha publicacion</th>
@@ -67,7 +85,7 @@
               <tbody>
                 <tr *ngFor="let ley of leyService.leyes">
                   <td>{{ ley.estado }}</td>
-                  <td>{{ ley.periodo }}</td>                  
+                  <td>{{ ley.idperiodo }}</td>                  
                   <td>{{ ley.nombre }}</td>
                   <td>{{ ley.cod_decreto }}</td>
                   <td>{{ ley.fecha_publicacion }}</td>
