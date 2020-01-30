@@ -10,8 +10,8 @@ export class RolService {
   selectedRol: Rol;
   rols: Rol[];
   
-  readonly URL_API = 'http://68.66.207.7:3000/api/rols';
- // readonly URL_API = 'http://localhost:3000/api/rols';
+ // readonly URL_API = 'http://68.66.207.7:3000/api/rol';
+ readonly URL_API = 'http://localhost:3000/api/rol';
 
 
   constructor(public http: HttpClient) {

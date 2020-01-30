@@ -10,8 +10,8 @@ export class UserService {
   selectedUser: User;
   users: User[];
   
-  readonly URL_API = 'http://68.66.207.7:3000/api/users';
-  //readonly URL_API = 'http://localhost:3000/api/users';
+  //readonly URL_API = 'http://68.66.207.7:3000/api/users';
+  readonly URL_API = 'http://localhost:3000/api/users';
 
 
   constructor(public http: HttpClient) {

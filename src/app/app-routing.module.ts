@@ -17,6 +17,21 @@ import { InteraccionComponent } from './components/interaccion/interaccion.compo
 import { PublicacionleyComponent } from './components/publicacionLey/publicacionley.component';
 import { PeriodoComponent } from './components/periodo/periodo.component';
 
+import { InicioComponent} from 'src/app/components/inicio/inicio.component';
+import { ModificarLeyComponent} from 'src/app/components/modificarLey/modificarLey.component';
+import { ModificarLeyAComponent} from 'src/app/components/modificarLeyA/modificarLeyA.component';
+import { CrearLeyComponent} from 'src/app/components/crearLey/crearLey.component';
+import {ArchivarComponent} from 'src/app/components/archivar/archivar.component';
+import {ContactanosComponent} from 'src/app/components/contactanos/contactanos.component';
+
+import {AcercaDeComponent} from 'src/app/components/acercaDe/acercaDe.component';
+import {VotarComponent} from 'src/app/components/votar/votar.component';
+import { LeyesComponent } from 'src/app/components/leyes/leyes.component';
+import { HistorialAsambleistaComponent } from 'src/app/components/historial-asambleista/historial-asambleista.component';
+
+import { LeerLeyComponent } from './components/leer-ley/leer-ley.component';
+import { LeyItemComponent } from './components/ley-item/ley-item.component';
+
 
 
 const routes: Routes = [
@@ -36,7 +51,19 @@ const routes: Routes = [
   {path:'admin/articulo', component:ArticuloComponent},
   {path:'admin/periodo', component:PeriodoComponent},
 
+  {path:'admin/inicio', component:InicioComponent},
+  {path:'admin/modificarLey', component:ModificarLeyComponent},
+  {path:'admin/modificarLeyA', component:ModificarLeyAComponent},
+  {path:'admin/archivar', component:ArchivarComponent},
+  {path:'contactanos', component:ContactanosComponent},
+  {path:'admin/crearLey', component:CrearLeyComponent},
+  {path:'admin/acercaDe', component:AcercaDeComponent},
+  {path:'admin/votar', component:VotarComponent},
+  {path:'admin/leyes', component:LeyesComponent},
+  {path:'admin/HistorialAsambleistaComponent', component:HistorialAsambleistaComponent},
 
+  {path:'admin/leerLey', component:LeerLeyComponent},
+  {path:'admin/LeyItem', component:LeyItemComponent}
 ];
 
 @NgModule({

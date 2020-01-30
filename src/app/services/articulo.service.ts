@@ -10,8 +10,8 @@ export class ArticuloService {
   selectedArticulo: Articulo;
   articulos: Articulo[];
   
-  readonly URL_API = 'http://68.66.207.7:3000/api/articulos';
- // readonly URL_API = 'http://localhost:3000/api/articulos';
+  //readonly URL_API = 'http://68.66.207.7:3000/api/articulos';
+ readonly URL_API = 'http://localhost:3000/api/articulos';
 
 
   constructor(public http: HttpClient) {
