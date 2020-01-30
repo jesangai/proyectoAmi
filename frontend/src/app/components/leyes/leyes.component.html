@@ -1,0 +1,134 @@
+
+  
+<!-- Favicons
+    ================================================== -->
+    <link rel="shortcut icon" href="../../../assets/img/favicon.ico" type="image/x-icon">
+    <link rel="apple-touch-icon" href="../../../assets/img/apple-touch-icon.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="../../../assets/img/apple-touch-icon-72x72.png">
+    <link rel="apple-touch-icon" sizes="114x114" href="../../../assets/img/apple-touch-icon-114x114.png">
+
+    <!-- Bootstrap  -->
+    <!-- Bootstrap  -->
+    <link rel="stylesheet" type="text/css"  href="../../../assets/css/bootstrap.css">
+    <link rel="stylesheet" type="text/css" href="../../../assets/fonts/font-awesome/css/font-awesome.css">
+
+    <!-- Nivo Lightbox
+    ================================================== -->
+  
+
+    <!-- Slider
+    ================================================== -->
+  
+
+    <!-- Stylesheet
+    ================================================== -->
+    <link rel="stylesheet" type="text/css"  href="../../../assets/css/style.css">
+    <link rel="stylesheet" type="text/css" href="../../../assets/css/responsive.css">
+
+    <!-- Google Fonts
+    ================================================== -->
+    <link href='http://fonts.googleapis.com/css?family=Lato:100,300,400,700,900,100italic,300italic,400italic,700italic,900italic' rel='stylesheet' type='text/css'>
+
+    <script type="text/javascript" src="../../../assets/js/modernizr.custom.js"></script>
+    
+
+<!-- Page Header
+    ================================================== -->    
+    <div id="tf-header">
+      <div class="container">
+          <h1>Leyes / Proyecto de Leyes</h1>
+      </div>
+  </div>
+  <br><br><br>   
+
+<!-- Formulario Header
+    ================================================== -->
+  <form>
+          <div class="form-group col-md-6">
+        <label for="inputCity">Ley/Proyecto </label>
+        <input type="text" class="form-control" id="inputCity" placeholder="Nombre Ley/Proyecto">
+      </div>
+
+
+      
+      
+      <div class="form-group col-md-2">        
+            <label for="inputZip">Período Legislativo</label>
+            <select id="inputState" class="form-control">
+              <option selected>Seleccionar el periodo</option>
+              <option>Todos</option>
+              <option>2009-2013</option>
+              <option>2013-2017</option>
+              <option>2017-2021</option>             
+            </select>
+      </div>
+
+      <div class="form-group col-md-2">
+        <br>
+        <button type="button" class="btn btn-primary" (click)="buscar()" style="margin: 5px">Buscar</button>      
+      </div>
+      
+<div class="form-row">
+    <div class="form-group col-md-12">
+     <br><br><br>
+     <label for="inputSeleccionProy">Seleccione la Ley/Proyecto y acceda a la información </label>       
+    </div>
+</div>
+
+<div class=" jumbotron-fluid">
+  <div class="container">
+    <div class="form-row">
+      <div class="form-group col-md-3">
+    <br><br><br>
+    <div class="thumbnail">
+        <app-ley-item
+          *ngFor="let ley of leyes"
+          [ley] = "ley"
+        >
+
+        </app-ley-item>
+    </div>
+  </div>
+</div>
+</div>
+</div>
+
+</form>
+
+<div class="form-group">
+  <div class="col-md-5">
+
+  </div>
+
+<div class="form-group col-md-4">
+  <nav aria-label="Page navigation example">
+    <ul class="pagination justify-content-center">
+      <li class="page-item disabled">
+        <a class="page-link" href="#" tabindex="-1">&laquo;</a>
+      </li>
+      <li class="page-item"><a class="page-link" href="#">1</a></li>
+      <li class="page-item"><a class="page-link" href="#">2</a></li>
+      <li class="page-item"><a class="page-link" href="#">3</a></li>
+      <li class="page-item">
+        <a class="page-link" href="#">&raquo;</a>
+      </li>
+    </ul>
+  </nav>
+    </div>
+
+  <div class="col-md-3">
+
+  </div>
+</div>
+
+<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+  <script type="text/javascript" src="../../../assets/js/jquery.1.11.1.js"></script>
+  <!-- Include all compiled plugins (below), or include individual files as needed -->
+  <script type="text/javascript" src="../../../assets/js/bootstrap.js"></script>  
+
+  <script type="text/javascript" src="../../../assets/js/SmoothScroll.js"></script>
+
+  <!-- Javascripts
+  ================================================== -->
+  <script type="text/javascript" src="../../../assets/js/main.js"></script>
