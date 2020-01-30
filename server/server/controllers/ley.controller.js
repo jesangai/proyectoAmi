@@ -67,18 +67,28 @@ leyCtrl.getLeyNombre = async (req, res, next) => {
 
 leyCtrl.getLeyArticulo = async (req, res, next) => {
     const { id } = req.params;
+    const ley = await Ley.find({'nombre': id});
     const articulo = await Articulo.find({ 'idley': id}).select({name: 1});
-    const dataart = [await articulo];
+    const dataart = [await ley, await articulo];
+    res.json(dataart);
+}
+
+leyCtrl.getLeyArticuloBuscar = async (req, res, next) => {
+    const { id } = req.params;
+    const ley = await Ley.find({'nombre': id});
+    const articulo = await Articulo.find({ 'idley': id});
+    const dataart = [await ley, await articulo];
     res.json(dataart);
 }
 
 leyCtrl.getLeyPeriodo = async (req, res, next) => {
     const { id } = req.params;
-    const periodo = await Periodo.find({ 'periodo': id});
-    const ley = await Ley.findById(periodo.idperiodo);
+    const periodo = await Periodo.find({'periodo': id}).select({periodo: 1});
+    const ley = await Ley.find({ 'idperiodo': id});
     const dataper = [await periodo, await ley];
     res.json(dataper);
 }
+
 
 
 module.exports = leyCtrl;

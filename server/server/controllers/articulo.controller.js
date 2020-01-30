@@ -48,12 +48,12 @@ articuloCtrl.deleteArticulo = async (req, res, next) => {
 
 articuloCtrl.getArticuloley = async (req, res, next) => {
     const { id } = req.params;
-    const ley = await Ley.find({ 'nombre': id});
-    const articulo = await Articulo.findById(ley.idley);
+    const ley = await Ley.find({ 'idley': id});
 
-    const data = [await ley, await articulo]; 
+    const data = [await ley]; 
 
     res.json(data);
 }
+
 
 module.exports = articuloCtrl;

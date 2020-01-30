@@ -49,4 +49,5 @@ ciudadanoCtrl.getCiudadanoApp = async (req, res, next) => {
     res.json(dataapp);
 };
 
+
 module.exports = ciudadanoCtrl;

@@ -10,8 +10,8 @@ export class PublicacionleyService {
   selectedPublicacionley: Publicacionley;
   publicacionleys: Publicacionley[];
   
-  readonly URL_API = 'http://68.66.207.7:3000/api/publicacionley';
- // readonly URL_API = 'http://localhost:3000/api/publicacionleys';
+ // readonly URL_API = 'http://68.66.207.7:3000/api/publicacionley';
+  readonly URL_API = 'http://localhost:3000/api/publicacionley';
 
 
   constructor(public http: HttpClient) {
