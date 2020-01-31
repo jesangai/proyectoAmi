@@ -10,8 +10,8 @@ export class HistorialService {
 
   selectedHistorial: Historial;
   historiales: Historial[]
-// readonly URL_API = 'http://68.66.207.7:3000/api/historial';
-  readonly URL_API = 'http://localhost:3000/api/historial';
+ readonly URL_API = 'http://68.66.207.7:3000/api/historial';
+ // readonly URL_API = 'http://localhost:3000/api/historial';
 
   constructor(public http:HttpClient) {
 this.selectedHistorial=new Historial();

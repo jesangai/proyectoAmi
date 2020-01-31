@@ -11,6 +11,7 @@ import {Router} from "@angular/router"
 
 export class LeyesComponent implements OnInit {
   leyes: Ley[];
+  nombreLeyFilter: string;
   selectedStatus : string='Todos';
   leyEstados: any[] = 
                   [{id: 'Todos', name:'Todos'},
@@ -48,12 +49,23 @@ export class LeyesComponent implements OnInit {
 
  }
 
+ getLeyesPorNombre(){
+  this.leyService.getLeyPorNombre(this.nombreLeyFilter).subscribe(objLeyes =>{
+    var obj = JSON.stringify(objLeyes);
+    var objString=obj.substring(1,obj.length -1 );
+    this.leyes = JSON.parse( objString);
+  })
+}
+
  selectOption(idOptionSelected:string){
    this.selectedStatus = idOptionSelected;
  }
 
-  buscar(){
-    this.getLeyesPorEstado();
+ buscar(){
+  if (this.selectedStatus!='' && (this.nombreLeyFilter=='' ||  this.nombreLeyFilter=='undefined') ) this.getLeyesPorEstado();
+  else{
+    if (this.nombreLeyFilter!='') this.getLeyesPorNombre();
   }
+}
 
 }

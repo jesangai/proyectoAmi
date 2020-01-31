@@ -10,8 +10,8 @@ import { Articulo } from '../models/articulo';
 export class LeyService {
   selectedLey:Ley;
   leyes:Ley[]
- // readonly URL_API = 'http://68.66.207.7:3000/api/ley';
- readonly URL_API = 'http://localhost:3000/api/ley';
+  readonly URL_API = 'http://68.66.207.7:3000/api/ley';
+ //readonly URL_API = 'http://localhost:3000/api/ley';
 
   constructor(public http:HttpClient) {
 this.selectedLey=new Ley();
@@ -40,17 +40,17 @@ this.selectedLey=new Ley();
   getLeyArticulo(articulo: Articulo) {
     return this.http.get(this.URL_API + `/articulo/${articulo._id}`);  
   }
-   
-  getLeyArticuloBuscar(articulo: Articulo) {
-
-    var pathMethodoEstado='/articulobuscar';
-    return this.http.get<Ley[]>( `${this.URL_API}` + pathMethodoEstado + `/${articulo.idley}`);
-  }
+    
 
   getLeyPorEstado(estado:string):Observable<Ley[]>{
       var pathMethodoEstado='/estado';
       return this.http.get<Ley[]>( `${this.URL_API}` + pathMethodoEstado + `/${estado}`);
      
+  }
+
+  getLeyPorNombre(nombre:string):Observable<Ley[]>{
+    var pathMethodoNombre='/nombre';
+    return this.http.get<Ley[]>( `${this.URL_API}` + pathMethodoNombre + `/${nombre}`);
   }
 
 

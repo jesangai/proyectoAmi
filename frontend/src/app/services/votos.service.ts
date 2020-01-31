@@ -10,8 +10,8 @@ export class VotosService {
   selectedVotos: Votos;
   votos: Votos[];
   
- // readonly URL_API = 'http://68.66.207.7:3000/api/votos';
-  readonly URL_API = 'http://localhost:3000/api/votos';
+  readonly URL_API = 'http://68.66.207.7:3000/api/votos';
+ // readonly URL_API = 'http://localhost:3000/api/votos';
 
 
   constructor(public http: HttpClient) {

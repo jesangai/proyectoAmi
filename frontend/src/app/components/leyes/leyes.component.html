@@ -1,25 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Leer Ley</title>
+  <meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
 
-  
-<!-- Favicons
-    ================================================== -->
-    <link rel="shortcut icon" href="../../../assets/img/favicon.ico" type="image/x-icon">
-    <link rel="apple-touch-icon" href="../../../assets/img/apple-touch-icon.png">
-    <link rel="apple-touch-icon" sizes="72x72" href="../../../assets/img/apple-touch-icon-72x72.png">
-    <link rel="apple-touch-icon" sizes="114x114" href="../../../assets/img/apple-touch-icon-114x114.png">
-
-    <!-- Bootstrap  -->
-    <!-- Bootstrap  -->
+<!-- Basic Page Needs
+    ================================================== -->    
+    
+    <!-- Bootstrap -->
     <link rel="stylesheet" type="text/css"  href="../../../assets/css/bootstrap.css">
     <link rel="stylesheet" type="text/css" href="../../../assets/fonts/font-awesome/css/font-awesome.css">
-
-    <!-- Nivo Lightbox
-    ================================================== -->
-  
-
-    <!-- Slider
-    ================================================== -->
-  
-
+    
+     
     <!-- Stylesheet
     ================================================== -->
     <link rel="stylesheet" type="text/css"  href="../../../assets/css/style.css">
@@ -29,8 +22,43 @@
     ================================================== -->
     <link href='http://fonts.googleapis.com/css?family=Lato:100,300,400,700,900,100italic,300italic,400italic,700italic,900italic' rel='stylesheet' type='text/css'>
 
-    <script type="text/javascript" src="../../../assets/js/modernizr.custom.js"></script>
-    
+    <script type="text/javascript" src="../../../assets/js/modernizr.custom.js"></script> 
+  </head>
+  <body>
+
+<div>
+  
+  <!-- Main Navigation 
+    ================================================== -->
+    <nav id="tf-menu" class="navbar navbar-default navbar-fixed-top">
+      <div class="container">
+          <!-- Brand and toggle get grouped for better mobile display -->
+          <div class="navbar-header">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+              <span class="sr-only">Toggle navigation</span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="#"><img src="../../../assets/img/logo1.jpg" alt="" width="100px" height="100%"></a>
+          </div>
+
+          <!-- Collect the nav links, forms, and other content for toggling -->
+          <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+            <ul class="nav navbar-nav navbar-right">
+              <li><a href="" class="scroll" routerLink="/admin/inicio">Inicio</a></li>
+              <li><a href="" class="scroll active" routerLink="/admin/leyes">Leyes</a></li>
+              <li><a href="" class="scroll" routerLink="/admin/acercaDe">Acerca De</a></li>
+              <li><a href="" class="scroll" routerLink="/contactanos">Contactanos</a></li>
+              <li><a href="" class="scroll" routerLink="/admin/login">Iniciar Sesion</a></li>
+
+            </ul>
+          </div><!-- /.navbar-collapse -->
+      </div><!-- /.container-fluid -->
+  </nav>
+  <!-- END nav -->
+  <!-- <img src="../../../assets/img/barra.png" alt="" width="100%"> -->
+</div>
 
 <!-- Page Header
     ================================================== -->    
@@ -44,25 +72,28 @@
 <!-- Formulario Header
     ================================================== -->
   <form>
-          <div class="form-group col-md-6">
+      <div class="form-group col-md-6">
         <label for="inputCity">Ley/Proyecto </label>
-        <input type="text" class="form-control" id="inputCity" placeholder="Nombre Ley/Proyecto">
+        <input type="text" class="form-control" id="inputCity" name="nombreLey" 
+        #name="ngModel" [(ngModel)]="nombreLeyFilter" placeholder="Nombre Ley/Proyecto">
       </div>
-
-
-      
-      
+      <div class="form-group col-md-2">        
+            <label for="inputZip">Estado del Tramite</label>            
+            <select class="form-control" (change)="selectOption($event.target.value)"
+            [(ngModel)]="selectedStatus">            
+            <option [value]="leyEstado.id" *ngFor="let leyEstado of leyEstados">{{leyEstado.name}}</option>
+             </select>
+      </div>
       <div class="form-group col-md-2">        
             <label for="inputZip">Período Legislativo</label>
             <select id="inputState" class="form-control">
-              <option selected>Seleccionar el periodo</option>
+              <option selected>Seleccionar...</option>
               <option>Todos</option>
               <option>2009-2013</option>
               <option>2013-2017</option>
               <option>2017-2021</option>             
             </select>
       </div>
-
       <div class="form-group col-md-2">
         <br>
         <button type="button" class="btn btn-primary" (click)="buscar()" style="margin: 5px">Buscar</button>      
@@ -74,24 +105,17 @@
      <label for="inputSeleccionProy">Seleccione la Ley/Proyecto y acceda a la información </label>       
     </div>
 </div>
-
-<div class=" jumbotron-fluid">
-  <div class="container">
-    <div class="form-row">
-      <div class="form-group col-md-3">
-    <br><br><br>
-    <div class="thumbnail">
-        <app-ley-item
+<div class="container">
+    <app-ley-item
           *ngFor="let ley of leyes"
           [ley] = "ley"
         >
-
         </app-ley-item>
-    </div>
-  </div>
 </div>
-</div>
-</div>
+
+
+
+
 
 </form>
 
@@ -99,22 +123,6 @@
   <div class="col-md-5">
 
   </div>
-
-<div class="form-group col-md-4">
-  <nav aria-label="Page navigation example">
-    <ul class="pagination justify-content-center">
-      <li class="page-item disabled">
-        <a class="page-link" href="#" tabindex="-1">&laquo;</a>
-      </li>
-      <li class="page-item"><a class="page-link" href="#">1</a></li>
-      <li class="page-item"><a class="page-link" href="#">2</a></li>
-      <li class="page-item"><a class="page-link" href="#">3</a></li>
-      <li class="page-item">
-        <a class="page-link" href="#">&raquo;</a>
-      </li>
-    </ul>
-  </nav>
-    </div>
 
   <div class="col-md-3">
 
@@ -125,10 +133,14 @@
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
   <script type="text/javascript" src="../../../assets/js/jquery.1.11.1.js"></script>
   <!-- Include all compiled plugins (below), or include individual files as needed -->
-  <script type="text/javascript" src="../../../assets/js/bootstrap.js"></script>  
+  <script type="text/javascript" src="../../../assets/js/bootstrap.js"></script>
+
+  <script type="text/javascript" src="../../../assets/js/owl.carousel.js"></script><!-- Owl Carousel Plugin -->
 
   <script type="text/javascript" src="../../../assets/js/SmoothScroll.js"></script>
 
   <!-- Javascripts
   ================================================== -->
   <script type="text/javascript" src="../../../assets/js/main.js"></script>
+</body>
+</html>

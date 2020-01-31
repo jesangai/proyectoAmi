@@ -10,8 +10,8 @@ export class ComentarioService {
   selectedComentario: Comentario;
   comentarios: Comentario[];
   
- // readonly URL_API = 'http://68.66.207.7:3000/api/comentarios';
-  readonly URL_API = 'http://localhost:3000/api/comentarios';
+  readonly URL_API = 'http://68.66.207.7:3000/api/comentarios';
+ // readonly URL_API = 'http://localhost:3000/api/comentarios';
 
 
   constructor(public http: HttpClient) {

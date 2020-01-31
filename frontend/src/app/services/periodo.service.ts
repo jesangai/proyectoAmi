@@ -10,8 +10,8 @@ export class PeriodoService {
 
   selectedPeriodo:Periodo;
   periodos:Periodo[]
- //readonly URL_API = 'http://68.66.207.7:3000/api/periodo';
- readonly URL_API = 'http://localhost:3000/api/periodo';
+ readonly URL_API = 'http://68.66.207.7:3000/api/periodo';
+ // readonly URL_API = 'http://localhost:3000/api/periodo';
 
   constructor(public http:HttpClient) {
 this.selectedPeriodo=new Periodo();
