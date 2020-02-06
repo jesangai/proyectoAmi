@@ -82,10 +82,13 @@ leyCtrl.getLeyArticuloBuscar = async (req, res, next) => {
     res.json(dataart);
 }
 
+
+
 leyCtrl.getLeyPeriodo = async (req, res, next) => {
     const { id } = req.params;
+    console.log(id);
     const periodo = await Periodo.find({'periodo': id}).select({periodo: 1});
-    const ley = await Ley.find({ 'idperiodo': periodo[0].id});
+    const ley = await Ley.find({ 'idperiodo': periodo[0]._id});
     const dataper = [await periodo, await ley];
     res.json(dataper[1]);
 }
