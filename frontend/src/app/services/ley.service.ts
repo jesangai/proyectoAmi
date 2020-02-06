@@ -39,7 +39,7 @@ this.selectedLey=new Ley();
   }
 
   getLeyArticulo(articulo: Articulo) {
-    return this.http.get(this.URL_API + `/articulo/${articulo._id}`);  }
+    return this.http.get(this.URL_API + `/articulobuscar/${articulo._id}`);  }
     
 
   getLeyPorEstado(estado:string):Observable<Ley[]>{
