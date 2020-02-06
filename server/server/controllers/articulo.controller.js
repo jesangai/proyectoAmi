@@ -64,4 +64,16 @@ articuloCtrl.getArticuloEstado = async (req, res, next) => {
     res.json(estado);
 }
 
+articuloCtrl.updateEstado = async (req, res, next) => {
+    const { id } = req.params;
+    const articulo = {
+        estado: req.body.estado      
+    };
+    await Articulo.findByIdAndUpdate(id, {$set :
+          {			
+              "estado" : articulo.estado,			
+          }}, {new: true});
+    res.json({status: 'Estado Actualizado'});
+  };
+
 module.exports = articuloCtrl;

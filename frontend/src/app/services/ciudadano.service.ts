@@ -11,7 +11,7 @@ export class CiudadanoService {
   ciudadanos: Ciudadano[];
   
   readonly URL_API = 'http://68.66.207.7:3000/api/ciudadano';
- // readonly URL_API = 'http://localhost:3000/api/ciudadanos';
+ // readonly URL_API = 'http://localhost:3000/api/ciudadano';
 
 
   constructor(public http: HttpClient) {

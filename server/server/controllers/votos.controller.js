@@ -52,9 +52,9 @@ votoCtrl.getContVotos = async (req, res, next)=> {
 
 votoCtrl.getVotArt = async (req, res, next)=> {
     const { id } = req.params;
-    const articulo = await Articulo.find({ '_id': id});
-    const votos = await Voto.find({ 'idarticulo': id}).select({voto: 1});
-    const datavot = await [await articulo, await votos];
+    const articulo = await Articulo.find({ '_id' : id});
+    const vot = await Voto.find({'idarticulo': id}).select({voto: 1});
+    const datavot = [await articulo, await vot];
     res.json(datavot);
 }
 

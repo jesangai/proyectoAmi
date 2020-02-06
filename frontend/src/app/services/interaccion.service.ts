@@ -11,7 +11,7 @@ export class InteraccionService {
   interaccions: Interaccion[];
   
   readonly URL_API = 'http://68.66.207.7:3000/api/interaccion';
- // readonly URL_API = 'http://localhost:3000/api/interaccions';
+ //readonly URL_API = 'http://localhost:3000/api/interaccion';
 
 
   constructor(public http: HttpClient) {

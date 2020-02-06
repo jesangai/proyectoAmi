@@ -1,14 +1,14 @@
 export class Rol {
 
-    constructor(_id = '', idpersona = '',descripcionrol = '') {
+    constructor(_id = '', idpersona = '',descripcion = '') {
         this._id = _id;
         this.idpersona = idpersona;
-        this.descripcionrol = descripcionrol;
+        this.descripcion = descripcion;
         
     }
 
     _id: string;
     idpersona: string;
-    descripcionrol: string;
+    descripcion: string;
     
 }

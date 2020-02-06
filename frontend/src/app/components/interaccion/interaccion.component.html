@@ -43,13 +43,13 @@
                 </div>
                
                 <div class="input-field col-s12">
-                  <input type="text" name="dislikes" #name="ngModel" 
-                  [(ngModel)]="interaccionService.selectedInteraccion.dislikes" placeholder="dislikes">
+                  <input type="text" name="likes" #name="ngModel" 
+                  [(ngModel)]="interaccionService.selectedInteraccion.likes" placeholder="likes">
                 </div>
 
                 <div class="input-field col-s12">
-                  <input type="text" name="likes" #name="ngModel" 
-                  [(ngModel)]="interaccionService.selectedInteraccion.likes" placeholder="likes">
+                  <input type="text" name="dislikes" #name="ngModel" 
+                  [(ngModel)]="interaccionService.selectedInteraccion.dislikes" placeholder="likes">
                 </div>
                 <div class="input-field col-s12">
                   <input type="text" name="comentariostotales" #name="ngModel" 
@@ -76,8 +76,8 @@
             <th>idciudadano</th>
             <th>idarticulo</th>
             <th>idcomentario</th>
-            <th>dislikes</th>
             <th>likes</th>
+            <th>dislikes</th>
             <th>comentariosTotales</th>
             <th>compartidasTotales</th>
           </thead>
@@ -86,8 +86,8 @@
               <td>{{ interaccion.idciudadano }}</td>
               <td>{{ interaccion.idarticulo }}</td>
               <td>{{ interaccion.idcomentario }}</td>
-              <td>{{ interaccion.dislikes }}</td>
               <td>{{ interaccion.likes }}</td>
+              <td>{{ interaccion.dislikes }}</td>
               <td>{{ interaccion.comentariostotales }}</td>
               <td>{{ interaccion.compartidastotales }}</td>
               <td>

@@ -34,8 +34,8 @@
                     [(ngModel)]="rolService.selectedRol.idpersona" placeholder="idpersona">
                 </div>
               <div class="input-field col-s12">
-                <input type="text" name="descripcionrol" #name="ngModel" 
-                [(ngModel)]="rolService.selectedRol.descripcionrol" placeholder="Descripcion de rol">
+                <input type="text" name="descripcion" #name="ngModel" 
+                [(ngModel)]="rolService.selectedRol.descripcion" placeholder="Descripcion de rol">
               </div>
               <div class="card-action">
                 <div class="input-field col-s12">
@@ -52,12 +52,12 @@
       <table class="striped highlight black-text">
         <thead>
           <th>idpersona</th>
-          <th>descripcionrol</th>
+          <th>descripcion</th>
         </thead>
         <tbody>
           <tr *ngFor="let rol of rolService.rols">
             <td>{{ rol.idpersona }}</td>
-            <td>{{ rol.descripcionrol }}</td>
+            <td>{{ rol.descripcion }}</td>
             <td>
               <a (click)="editRol(rol)">
                 <i class="material-icons">edit</i>

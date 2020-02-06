@@ -82,8 +82,6 @@ leyCtrl.getLeyArticuloBuscar = async (req, res, next) => {
     res.json(dataart);
 }
 
-
-
 leyCtrl.getLeyPeriodo = async (req, res, next) => {
     const { id } = req.params;
     console.log(id);

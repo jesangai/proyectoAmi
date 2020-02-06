@@ -57,6 +57,7 @@ interaccionCtrl.deleteInteraccion = async (req, res, next) => {
 
 interaccionCtrl.getCiudadanoDatos = async (req, res, next) => {
     const { id } = req.params;
+    const interaccion = await Interaccion.find({ 'idciudadano': id});
     const ciudadano = await Ciudadano.find({'nombre': id}).select({nombre: 1, cedula: 1});
     const interaccion = await Interaccion.find({ 'idciudadano': id});
     const dataciu = [await ciudadano, await interaccion];

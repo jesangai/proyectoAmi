@@ -3,7 +3,7 @@ const { Schema } = mongoose;
 
 const rolSchema = new Schema({
     idpersona: { type: String, required: false},
-    descripcion: { type: String, required: false }
+    descripcion: { type: String, required: false},
     
 });
 
