@@ -12,6 +12,7 @@ articuloCtrl.createArticulo = async (req, res, next) => {
         name: req.body.name,
         detalle: req.body.detalle,
         resumen: req.body.resumen,
+        estado: req.body.estado,
         exp_articulo: req.body.exp_articulo,
         idley: req.body.idley
 
@@ -32,6 +33,7 @@ articuloCtrl.editArticulo = async (req, res, next) => {
         name: req.body.name,
         detalle: req.body.detalle,
         resumen: req.body.resumen,
+        estado: req.body.estado,
         exp_articulo: req.body.exp_articulo,
         idley: req.body.idley
 
@@ -54,6 +56,12 @@ articuloCtrl.getArticuloley = async (req, res, next) => {
     const data = [await ley, await articulo]; 
 
     res.json(data);
+}
+
+articuloCtrl.getArticuloEstado = async (req, res, next) => {
+    const { id } = req.params;
+    const estado = await Articulo.find({ 'estado': id}).select();
+    res.json(estado);
 }
 
 module.exports = articuloCtrl;

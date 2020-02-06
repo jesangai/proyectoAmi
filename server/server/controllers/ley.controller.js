@@ -1,6 +1,7 @@
 const Ley = require('../models/ley');
 const Articulo = require('../models/articulo');
 const Periodo = require('../models/periodo');
+const Comentario = require('../models/comentario');
 
 const leyCtrl = {};
 
@@ -60,14 +61,14 @@ leyCtrl.getLeyEstado = async (req, res, next) => {
 
 leyCtrl.getLeyNombre = async (req, res, next) => {
     const { id } = req.params;
-    const nombre = await Ley.find({ 'nombre': id}).select();
+    const nombre = await Ley.find({ 'nombre': {$regex: ".*" + id + ".*"}}).select();
     const dataname = [await nombre];
     res.json(dataname);
 }
 
 leyCtrl.getLeyArticulo = async (req, res, next) => {
     const { id } = req.params;
-    const ley = await Ley.find({'nombre': id});
+    const ley = await Ley.find({'_id': id});
     const articulo = await Articulo.find({ 'idley': id}).select({name: 1});
     const dataart = [await ley, await articulo];
     res.json(dataart);
@@ -75,7 +76,7 @@ leyCtrl.getLeyArticulo = async (req, res, next) => {
 
 leyCtrl.getLeyArticuloBuscar = async (req, res, next) => {
     const { id } = req.params;
-    const ley = await Ley.find({'nombre': id});
+    const ley = await Ley.find({'_id': id});
     const articulo = await Articulo.find({ 'idley': id});
     const dataart = [await ley, await articulo];
     res.json(dataart);
@@ -84,9 +85,19 @@ leyCtrl.getLeyArticuloBuscar = async (req, res, next) => {
 leyCtrl.getLeyPeriodo = async (req, res, next) => {
     const { id } = req.params;
     const periodo = await Periodo.find({'periodo': id}).select({periodo: 1});
-    const ley = await Ley.find({ 'idperiodo': id});
+    const ley = await Ley.find({ 'idperiodo': periodo[0].id});
     const dataper = [await periodo, await ley];
-    res.json(dataper);
+    res.json(dataper[1]);
+}
+
+
+leyCtrl.getComentArt = async (req, res, next)=> {
+    const { id } = req.params;
+    const articulo = await Articulo.find({ '_id' : id});
+    const comentario = await Comentario.find({'idarticulo': id}).select({comentarios: 1});
+    const datacoment = await [await articulo, await comentario];
+    res.json(datacoment);
+
 }
 
 

@@ -3,9 +3,11 @@ const { Schema } = mongoose;
 
 const interaccionSchema = new Schema({
 
-    idusuario: { type: String, required: false},
-    idley: { type: String, required: false},
-    likes: { type: String, required: false},
+    idciudadano: { type: String, required: false},
+    idarticulo: { type: String, required: false},
+    idcomentario: { type: String, required: false},
+    likes: { type: Boolean, required: false},
+    dislikes: { type: Boolean, required: false},
     comentariostotales: { type: String, required: false},
     compartidastotales: { type: String, required: false},
 

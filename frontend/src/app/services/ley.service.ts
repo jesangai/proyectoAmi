@@ -24,6 +24,7 @@ this.selectedLey=new Ley();
      return this.http.get<Ley[]>(`${this.URL_API}`);
   }
 
+  
   getLey<T>(_id:string):Observable<T>{
     console.log('id ley:'+_id);
      return this.http.get<T>( `${this.URL_API}` + `/${_id}`);
@@ -38,8 +39,7 @@ this.selectedLey=new Ley();
   }
 
   getLeyArticulo(articulo: Articulo) {
-    return this.http.get(this.URL_API + `/articulo/${articulo._id}`);  
-  }
+    return this.http.get(this.URL_API + `/articulo/${articulo._id}`);  }
     
 
   getLeyPorEstado(estado:string):Observable<Ley[]>{
@@ -48,11 +48,20 @@ this.selectedLey=new Ley();
      
   }
 
+  getArticuloPorLey(idLey:string):Observable<Articulo[]>{
+    var pathLeyPorArticulo='/articulo';
+    console.log('path:'+`${this.URL_API}` + pathLeyPorArticulo + `/${idLey}`);
+    return this.http.get<Articulo[]>( `${this.URL_API}` + pathLeyPorArticulo + `/${idLey}`);
+  }
+
   getLeyPorNombre(nombre:string):Observable<Ley[]>{
     var pathMethodoNombre='/nombre';
     return this.http.get<Ley[]>( `${this.URL_API}` + pathMethodoNombre + `/${nombre}`);
   }
-
-
+  
+  getLeyPorPeriodo(periodo: string):Observable<Ley[]>{
+    var pathLeyPorPeriodo = '/periodo';
+    return this.http.get<Ley[]>( `${this.URL_API}` + pathLeyPorPeriodo + `/${periodo}`);
+  }
 
 }

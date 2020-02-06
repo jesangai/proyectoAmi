@@ -11,8 +11,10 @@ import {Router} from "@angular/router"
 
 export class LeyesComponent implements OnInit {
   leyes: Ley[];
+  periodoFilter: string;
   nombreLeyFilter: string;
-  selectedStatus : string='Todos';
+  selectedStatus : string;
+  selectedPeriodo: string;
   leyEstados: any[] = 
                   [{id: 'Todos', name:'Todos'},
                    {id: 'Enviado', name:'Enviado'},
@@ -57,14 +59,44 @@ export class LeyesComponent implements OnInit {
   })
 }
 
- selectOption(idOptionSelected:string){
-   this.selectedStatus = idOptionSelected;
- }
+getLeyesPorPeriodo(){
+  console.log('getLeyesPorPeriod');
+  if (this.selectedPeriodo=='Todos'){
+      this.getLeyes();
+  }else
+  {
+    this.leyService.getLeyPorPeriodo(this.selectedPeriodo).subscribe(objLeyes =>{
+      this.leyes = objLeyes
+    })
 
- buscar(){
-  if (this.selectedStatus!='' && (this.nombreLeyFilter=='' ||  this.nombreLeyFilter=='undefined') ) this.getLeyesPorEstado();
-  else{
-    if (this.nombreLeyFilter!='') this.getLeyesPorNombre();
+  }
+}
+
+selectOption(idOptionSelected:string){
+  this.selectedStatus = idOptionSelected;
+}
+
+putSelectedPeriodo(periodo:string){
+  this.selectedPeriodo = periodo
+}
+
+ buscar(){     
+  if (this.selectedStatus){
+    this.getLeyesPorEstado();
+    this.selectedPeriodo=undefined
+    this.nombreLeyFilter=''
+  }
+
+  if(this.selectedPeriodo){
+    this.getLeyesPorPeriodo();
+    this.selectedStatus=undefined
+    this.nombreLeyFilter=''
+  }
+
+  if (this.nombreLeyFilter!=''){
+    this.getLeyesPorNombre();
+    this.selectedStatus=undefined
+    this.selectedPeriodo=undefined
   }
 }
 

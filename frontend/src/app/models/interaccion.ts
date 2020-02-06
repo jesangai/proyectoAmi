@@ -1,9 +1,13 @@
+import { Comentario } from "./comentario";
+
 export class Interaccion {
 
-    constructor(_id = '', idusuario = '', idley = '', likes = '', comentariostotales = '', compartidastotales = '') {
+    constructor(_id = '', idciudadano = '', idarticulo = '', idcomentario = '', dislikes = '', likes = '', comentariostotales = '', compartidastotales = '') {
         this._id = _id;
-        this.idusuario = idusuario;
-        this.idley = idley;
+        this.idciudadano = idciudadano;
+        this.idarticulo = idarticulo;
+        this.idcomentario = idcomentario
+        this.dislikes = dislikes;
         this.likes = likes;
         this.comentariostotales = comentariostotales;
         this.compartidastotales = compartidastotales;
@@ -11,8 +15,10 @@ export class Interaccion {
     }
 
     _id: string;
-    idusuario: string;
-    idley: string;
+    idciudadano: string;
+    idarticulo: string;
+    idcomentario: string;
+    dislikes: string;
     likes: string;
     comentariostotales: string;
     compartidastotales: string;

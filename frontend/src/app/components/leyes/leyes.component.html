@@ -81,19 +81,21 @@
             <label for="inputZip">Estado del Tramite</label>            
             <select class="form-control" (change)="selectOption($event.target.value)"
             [(ngModel)]="selectedStatus">            
-            <option [value]="leyEstado.id" *ngFor="let leyEstado of leyEstados">{{leyEstado.name}}</option>
-             </select>
+            <option [value]="leyEstado.id" *ngFor="let leyEstado of leyEstados">
+            {{leyEstado.name}}</option>
+            </select>           
       </div>
       <div class="form-group col-md-2">        
-            <label for="inputZip">Período Legislativo</label>
-            <select id="inputState" class="form-control">
-              <option selected>Seleccionar...</option>
-              <option>Todos</option>
-              <option>2009-2013</option>
-              <option>2013-2017</option>
-              <option>2017-2021</option>             
-            </select>
-      </div>
+        <label for="inputZip">Período Legislativo</label>
+        <select id="inputPeriodo" 
+        name="inputPeriodo" class="form-control" #name="ngModel" [(ngModel)]="periodoFilter"
+        (change)="putSelectedPeriodo($event.target.value)"
+        > <option>Todos</option>
+          <option>2009-2013</option>
+          <option>2013-2017</option>
+          <option>2017-2021</option>             
+        </select>        
+     </div>
       <div class="form-group col-md-2">
         <br>
         <button type="button" class="btn btn-primary" (click)="buscar()" style="margin: 5px">Buscar</button>      
@@ -112,11 +114,6 @@
         >
         </app-ley-item>
 </div>
-
-
-
-
-
 </form>
 
 <div class="form-group">

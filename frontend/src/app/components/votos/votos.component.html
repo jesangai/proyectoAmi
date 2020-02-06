@@ -40,8 +40,8 @@
                             [(ngModel)]="votosService.selectedVotos.idarticulo" placeholder="id articulo">
                     </div>
                     <div class="input-field col-s12">
-                            <input type="text" name="fecha_votacion" #name="ngModel" 
-                            [(ngModel)]="votosService.selectedVotos.fecha_votacion" placeholder="fecha de votacion">
+                            <input type="text" name="fechavotacion" #name="ngModel" 
+                            [(ngModel)]="votosService.selectedVotos.fechavotacion" placeholder="fecha de votacion">
                     </div>
                     <div class="input-field col-s12">
                             <input type="text" name="voto" #name="ngModel" 
@@ -67,7 +67,7 @@
               <thead>
                 <th>iduser</th>
                 <th>idarticulo</th>
-                <th>fecha_votacion</th>
+                <th>fechavotacion</th>
                 <th>voto</th>
                 <th>ciudadano</th>
             </thead>
@@ -75,7 +75,7 @@
                 <tr *ngFor="let voto of votosService.votos">
                   <td>{{ voto.iduser }}</td>
                   <td>{{ voto.idarticulo }}</td>
-                  <td>{{ voto.fecha_votacion }}</td>
+                  <td>{{ voto.fechavotacion }}</td>
                   <td>{{ voto.voto }}</td>
                   <td>{{ voto.ciudadano }}</td>
 

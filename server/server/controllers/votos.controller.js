@@ -43,4 +43,12 @@ votoCtrl.deleteVoto = async (req, res, next) => {
     res.json({status: 'Voto Eliminada'});
 };
 
+votoCtrl.getContVotos = async (req, res, next)=> {
+    const { id } = req.params;
+    const votos = await Voto.find({ 'voto': id}).select({voto: 1});
+    res.json(votos);
+}
+
+
+
 module.exports = votoCtrl;

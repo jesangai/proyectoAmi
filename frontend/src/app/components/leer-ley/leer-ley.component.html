@@ -138,21 +138,32 @@
          
       </div>
   
-      <div class="form-row">
-        <div class="form-group col-md-6">
-          <label for="inputNombreArt">Nombre del Artículo</label>
-          <input type="text" id="disabledTextInput" class="form-control" placeholder="Art. 1123">
-        </div>
-        <div class="form-group col-md-6">
-          <label for="inputDetalleArt">Detalle del Artículo</label>
-          <input type="text" id="disabledTextInput" class="form-control" placeholder="Proyecto de ley Orgánica de protección">
-        </div>
+      <div class="row">
+        <form #leyForm="ngForm"> 
+        <div class="col">
+          <table class="table table-striped">
+            <thead>
+              <tr>
+                <th>Nombre</th>
+                <th>Detalle</th>
+                <th>Resumen</th>
+              </tr>
+            </thead>
+            <tr  *ngFor="let articulo of articulos">                         
+              <td> {{articulo.name}}</td>
+              <td> {{articulo.detalle}}</td>
+              <td> {{articulo.resumen}}</td>
+            </tr>
+          </table>
+        </div> 
+        </form>    
       </div>
-  
-      <div class="form-group col-md-6">
-        <label for="inputExplicacionArt">Explicación del Artículo</label>
-        <input type="text" id="disabledTextInput" class="form-control" placeholder="Proyecto de ley Orgánica de protección">
-      </div> 
+ 
+ <!-- <app-lista-articulos-por-ley
+  *ngFor="let articulo of articulos"
+  [articulo] = "articulo">
+</app-lista-articulos-por-ley>     -->
+
       
     </fieldset>
       

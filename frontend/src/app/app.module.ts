@@ -36,6 +36,7 @@ import { LeyesComponent } from './components/leyes/leyes.component';
 import { HistorialAsambleistaComponent } from './components/historial-asambleista/historial-asambleista.component';
 import { LeerLeyComponent } from './components/leer-ley/leer-ley.component';
 import { LeyItemComponent } from './components/ley-item/ley-item.component';
+import { ListaArticulosPorLeyComponent } from './components/lista-articulos-por-ley/lista-articulos-por-ley.component';
 //Pag Fin
 
 @NgModule({
@@ -69,7 +70,9 @@ import { LeyItemComponent } from './components/ley-item/ley-item.component';
     LeyesComponent,
     HistorialAsambleistaComponent,
     LeyItemComponent,
-    LeerLeyComponent
+    LeerLeyComponent, 
+    ListaArticulosPorLeyComponent
+
 
 
   ],

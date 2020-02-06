@@ -30,10 +30,7 @@
             <input type="hidden" name="_id" #_id="ngModel" 
             [(ngModel)]="comentarioService.selectedComentario._id">
             <div class="row">
-              <div class="input-field col-s12">
-                <input type="text" name="idpublicacionley" #name="ngModel" 
-                [(ngModel)]="comentarioService.selectedComentario.idpublicacionley" placeholder="idpublicacionley">
-              </div>
+            
               <div class="input-field col-s12">
                 <input type="text" name="like" #name="ngModel" 
                 [(ngModel)]="comentarioService.selectedComentario.like" placeholder="like ">
@@ -45,6 +42,10 @@
               <div class="input-field col-s12">
                 <input type="text" name="comentarios" #name="ngModel" 
                 [(ngModel)]="comentarioService.selectedComentario.comentarios" placeholder="comentarios">
+              </div>
+              <div class="input-field col-s12">
+                <input type="text" name="idarticulo" #name="ngModel" 
+                [(ngModel)]="comentarioService.selectedComentario.idarticulo" placeholder="idarticulo">
               </div>
               <div class="card-action">
                 <div class="input-field col-s12">
@@ -60,18 +61,19 @@
     <div class="col s7">
       <table class="striped highlight black-text">
         <thead>
-          <th>idpublicacionley</th>
           <th>like</th>
           <th>dislike</th>
          <th>comentarios</th>
+         <th>idarticulo</th>
 
         </thead>
         <tbody>
           <tr *ngFor="let comentario of comentarioService.comentarios">
-            <td>{{ comentario.idpublicacionley }}</td>
             <td>{{ comentario.like }}</td>
             <td>{{ comentario.dislike }}</td>
             <td>{{ comentario.comentarios }}</td>
+            <td>{{ comentario.idarticulo }}</td>
+
 
             <td>
               <a (click)="editComentario(comentario)">

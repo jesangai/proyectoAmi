@@ -30,13 +30,23 @@
               [(ngModel)]="interaccionService.selectedInteraccion._id">
               <div class="row">
                 <div class="input-field col-s12">
-                      <input type="text" name="idusuario" #name="ngModel" 
-                      [(ngModel)]="interaccionService.selectedInteraccion.idusuario" placeholder="idusuario">
+                      <input type="text" name="idciudadano" #name="ngModel" 
+                      [(ngModel)]="interaccionService.selectedInteraccion.idciudadano" placeholder="idciudadano">
                 </div>
                 <div class="input-field col-s12">
-                        <input type="text" name="idley" #name="ngModel" 
-                        [(ngModel)]="interaccionService.selectedInteraccion.idley" placeholder="idley">
+                        <input type="text" name="idarticulo" #name="ngModel" 
+                        [(ngModel)]="interaccionService.selectedInteraccion.idarticulo" placeholder="idarticulo">
                 </div>
+                <div class="input-field col-s12">
+                  <input type="text" name="idcomentario" #name="ngModel" 
+                  [(ngModel)]="interaccionService.selectedInteraccion.idcomentario" placeholder="idcomentario">
+                </div>
+               
+                <div class="input-field col-s12">
+                  <input type="text" name="dislikes" #name="ngModel" 
+                  [(ngModel)]="interaccionService.selectedInteraccion.dislikes" placeholder="dislikes">
+                </div>
+
                 <div class="input-field col-s12">
                   <input type="text" name="likes" #name="ngModel" 
                   [(ngModel)]="interaccionService.selectedInteraccion.likes" placeholder="likes">
@@ -63,16 +73,20 @@
       <div class="col s7">
         <table class="striped highlight black-text">
           <thead>
-            <th>idUsuario</th>
-            <th>idLey</th>
+            <th>idciudadano</th>
+            <th>idarticulo</th>
+            <th>idcomentario</th>
+            <th>dislikes</th>
             <th>likes</th>
             <th>comentariosTotales</th>
             <th>compartidasTotales</th>
           </thead>
           <tbody>
             <tr *ngFor="let interaccion of interaccionService.interaccions">
-              <td>{{ interaccion.idusuario }}</td>
-              <td>{{ interaccion.idley }}</td>
+              <td>{{ interaccion.idciudadano }}</td>
+              <td>{{ interaccion.idarticulo }}</td>
+              <td>{{ interaccion.idcomentario }}</td>
+              <td>{{ interaccion.dislikes }}</td>
               <td>{{ interaccion.likes }}</td>
               <td>{{ interaccion.comentariostotales }}</td>
               <td>{{ interaccion.compartidastotales }}</td>

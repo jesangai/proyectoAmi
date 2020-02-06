@@ -1,10 +1,10 @@
 export class Votos {
 
-    constructor(_id = '', iduser = '', idarticulo = '', fecha_votacion = '', voto = '', ciudadano = '') {
+    constructor(_id = '', iduser = '', idarticulo = '', fechavotacion = '', voto = '', ciudadano = '') {
         this._id = _id;
         this.iduser = iduser;   
         this.idarticulo = idarticulo;
-        this.fecha_votacion = fecha_votacion;
+        this.fechavotacion = fechavotacion;
         this.voto = voto;
         this.ciudadano = ciudadano;
     }
@@ -12,7 +12,7 @@ export class Votos {
     _id: string;
     iduser : string;
     idarticulo : string;
-    fecha_votacion: string;
+    fechavotacion: string;
     voto: string;
     ciudadano: string;
     

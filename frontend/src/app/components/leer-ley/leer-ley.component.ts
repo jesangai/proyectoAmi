@@ -2,6 +2,7 @@ import { Component, OnInit, Input } from '@angular/core';
 import { LeyService } from '../../services/ley.service';
 import { Ley } from '../../models/ley';
 import { ActivatedRoute } from '@angular/router';
+import { Articulo } from '../../models/articulo';
 
 @Component({
   selector: 'app-leer-ley',
@@ -9,6 +10,7 @@ import { ActivatedRoute } from '@angular/router';
   styleUrls: ['./leer-ley.component.css']
 })
 export class LeerLeyComponent implements OnInit {
+  articulos :  Articulo[];
   
   constructor(public leyService: LeyService, public activeRoute: ActivatedRoute) { }
 
@@ -21,5 +23,17 @@ export class LeerLeyComponent implements OnInit {
       this.leyService.selectedLey = <Ley> ley;
       
     });
+    this.getArticuloPorLey();
+  }
+
+  getArticuloPorLey(){
+    console.log('id ley:'+ this.leyService.selectedLey._id);
+    this.leyService.getArticuloPorLey(this.leyService.selectedLey._id).subscribe(articulos =>{
+      console.log(articulos[1]);
+      var objArticulos = JSON.stringify(articulos[1]);
+      console.log('objArticulos');
+      console.log(objArticulos);
+      this.articulos = JSON.parse(objArticulos);   
+    })
   }
 }

@@ -9,10 +9,10 @@ comentarioCtrl.getComentarios = async (req, res, next) => {
 
 comentarioCtrl.createComentario = async (req, res, next) => {
     const comentario = new Comentario({
-        idpublicacionley: req.body.idpublicacionley,
         like: req.body.like,
         dislike: req.body.dislike,
-        comentarios: req.body.comentarios
+        comentarios: req.body.comentarios,
+        idarticulo: req.body.idarticulo
     });
     await comentario.save();
     res.json({status: 'Comentario creada'});
@@ -27,10 +27,10 @@ comentarioCtrl.getComentario = async (req, res, next) => {
 comentarioCtrl.editComentario = async (req, res, next) => {
     const { id } = req.params;
     const comentario = {
-        idpublicacionley: req.body.idpublicacionley,
         like: req.body.like,
         dislike: req.body.dislike,
-        comentarios: req.body.comentarios
+        comentarios: req.body.comentarios,
+        idarticulo: req.body.idarticulo,
     };
     await Comentario.findByIdAndUpdate(id, {$set: comentario}, {new: true});
     res.json({status: 'Comentario Actualizada'});

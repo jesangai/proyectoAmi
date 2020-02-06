@@ -45,6 +45,12 @@
                 <input type="text" name="resumen" #name="ngModel" 
                 [(ngModel)]="articuloService.selectedArticulo.resumen" placeholder="resumen">
               </div>
+              
+              <div class="input-field col-s12">
+                <input type="text" name="estado" #name="ngModel" 
+                [(ngModel)]="articuloService.selectedArticulo.estado" placeholder="estado">
+              </div>
+
 
               <div class="input-field col-s12">
                 <input type="text" name="exp_articulo" #name="ngModel" 
@@ -72,6 +78,7 @@
           <th>Nombre</th>
           <th>detalle</th>
           <th>resumen</th>
+          <th>estado</th>
           <th>descripcion_del_articulo</th>
           <th>idley</th>
 
@@ -82,6 +89,7 @@
             <td>{{ articulo.name }}</td>
             <td>{{ articulo.detalle }}</td>
             <td>{{ articulo.resumen }}</td>
+            <td>{{ articulo.estado }}</td>
             <td>{{ articulo.exp_articulo }}</td>
             <td>{{ articulo.idley }}</td>
 
